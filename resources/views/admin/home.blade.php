@@ -24,7 +24,9 @@
                             <div class="d-flex justify-content-end">
                                 <a class="btn btn-success me-2" href="{{ route('projects.show', $project) }}">Show</a>
                                 <a class="btn btn-warning me-2" href="{{ route('projects.edit', $project) }}">Edit</a>
-                                <form action="" method="POST">
+                                <form action="{{ route('projects.destroy', $project) }}" method="POST">
+                                    @csrf
+                                    @method('delete')
                                     <button class="btn btn-danger">Delete</button>
                                 </form>
                             </div>
