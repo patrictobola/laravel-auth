@@ -22,11 +22,14 @@ Route::get('/', [GuestHomeController::class, 'index']);
 
 
 // Admin 
-Route::get('/admin', [AdminHomeController::class, 'index'])->middleware(['auth', 'verified'])->name('home');
-
-Route::prefix('/admin')->middleware(['auth'])->name('project.')->group(function () {
+Route::prefix('/admin')->middleware(['auth'])->group(function () {
     Route::resource('/projects', ProjectController::class);
 });
+
+
+
+Route::get('/admin', [AdminHomeController::class, 'index'])->middleware(['auth', 'verified'])->name('home');
+
 
 
 
