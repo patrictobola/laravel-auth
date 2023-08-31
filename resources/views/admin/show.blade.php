@@ -21,7 +21,6 @@
                     <td>{{ $project->date }}</td>
                     <td>
                         <div class="d-flex justify-content-end">
-                            <a class="btn btn-success me-2" href="{{ route('projects.show', $project) }}">Show</a>
                             <a class="btn btn-warning me-2" href="#">Edit</a>
                             <form action="" method="POST">
                                 <button class="btn btn-danger">Delete</button>
