@@ -11,7 +11,7 @@
                     <th scope="col">Title</th>
                     <th scope="col">Description</th>
                     <th scope="col">Date of creation</th>
-                    <th scope="col">Options</th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
@@ -21,9 +21,13 @@
                         <td>{{ substr($project->description, 0, 50) . '...' }}</td>
                         <td>{{ $project->date }}</td>
                         <td>
-                            <i class="fa-regular fa-pen-to-square"></i>
-                            <i class="fa-solid fa-trash"></i>
-                            <button><i class="fa-solid fa-trash"></i></button>
+                            <div class="d-flex justify-content-end">
+                                <a class="btn btn-success me-2" href="#">Show</a>
+                                <a class="btn btn-warning me-2" href="#">Edit</a>
+                                <form action="" method="POST">
+                                    <button class="btn btn-danger">Delete</button>
+                                </form>
+                            </div>
                         </td>
                     </tr>
                 @endforeach

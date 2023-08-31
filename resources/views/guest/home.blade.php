@@ -23,7 +23,6 @@
 
     <div class="content">
         <div class="container">
-            <i class="fas fa-trash"></i>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora temporibus, dicta nemo aliquam totam nisi
                 deserunt soluta quas voluptatum ab beatae praesentium necessitatibus minus, facilis illum rerum officiis
                 accusamus dolores!</p>
