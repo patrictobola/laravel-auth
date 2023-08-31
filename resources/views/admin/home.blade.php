@@ -8,30 +8,23 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Date of creation</th>
+                    <th scope="col">Options</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                </tr>
+                @foreach ($projects as $project)
+                    <tr>
+                        <th>{{ $project->title }}</th>
+                        <td>{{ substr($project->description, 0, 50) . '...' }}</td>
+                        <td>{{ $project->date }}</td>
+                        <td>
+                            Show, Edit, Delete
+                        </td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
