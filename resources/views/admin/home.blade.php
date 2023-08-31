@@ -18,7 +18,11 @@
                 @foreach ($projects as $project)
                     <tr>
                         <th>{{ $project->title }}</th>
-                        <td>{{ substr($project->description, 0, 50) . '...' }}</td>
+                        @if (strlen($project->description) > 30)
+                            <td>{{ substr($project->description, 0, 50) . '...' }}</td>
+                        @else
+                            <td>{{ $project->description }}</td>
+                        @endif
                         <td>{{ $project->date }}</td>
                         <td>
                             <div class="d-flex justify-content-end">
