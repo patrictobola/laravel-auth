@@ -21,7 +21,9 @@
                         <td>{{ substr($project->description, 0, 50) . '...' }}</td>
                         <td>{{ $project->date }}</td>
                         <td>
-                            Show, Edit, Delete
+                            <i class="fa-regular fa-pen-to-square"></i>
+                            <i class="fa-solid fa-trash"></i>
+                            <button><i class="fa-solid fa-trash"></i></button>
                         </td>
                     </tr>
                 @endforeach
