@@ -6,12 +6,21 @@
             {{ __('Dashboard') }}
         </h2>
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" name="title" value="{{ $project->title }}">
         </div>
         <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <label for="description" class="form-label">Description</label>
+            <textarea type="text" class="form-control" id="description" name="description" rows="4">{{ $project->description }}</textarea>
         </div>
+        <div class="mb-3">
+            <label for="date" class="form-label">Date</label>
+            <input type="date" class="form-control" id="date" name="date" value="{{ $project->date }}">
+        </div>
+        <div class="mb-3">
+            <label for="thumb" class="form-label">Screenshot</label>
+            <input type="text" class="form-control" id="thumb" name="thumb" value="{{ $project->thumb }}">
+        </div>
+
     </div>
 @endsection
