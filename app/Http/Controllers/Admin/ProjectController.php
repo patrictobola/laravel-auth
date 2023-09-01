@@ -36,6 +36,10 @@ class ProjectController extends Controller
             'description' => 'bail|required|string',
             'date' => 'bail|required|date',
             'thumb' => 'bail|required|url:http,https|max:500',
+        ], [
+            'title.max' => 'The title must be shorter than 255 characters.',
+            'thumb.url' => "The screenshot URL must start with 'http' or 'https'.",
+            'thumb.max' => "The screenshot URL must be shorter than 500 characters."
         ]);
         $data = $request->all();
 
