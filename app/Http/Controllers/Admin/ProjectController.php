@@ -32,17 +32,11 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'title' => 'bail|required|string|max:255',
-            'description' => 'bail|required|string',
-            'date' => 'bail|required|date',
-            'thumb' => 'bail|required|url:http,https|max:500',
-        ], [
-            'title.max' => 'The title must be shorter than 255 characters.',
-            'thumb.required' => "The screenshot field is required.",
-            'thumb.url' => "The screenshot field must be filled with a 'http://' or 'https://' URL.",
-            'thumb.max' => "The screenshot URL must be shorter than 500 characters."
-        ]);
+        $request->validate(
+            config('project_validate'),
+            config('project_validate_errors')
+        );
+
         $data = $request->all();
 
         $new_project = new Project();
@@ -74,17 +68,10 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
-        $request->validate([
-            'title' => 'bail|required|string|max:255',
-            'description' => 'bail|required|string',
-            'date' => 'bail|required|date',
-            'thumb' => 'bail|required|url:http,https|max:500',
-        ], [
-            'title.max' => 'The title must be shorter than 255 characters.',
-            'thumb.required' => "The screenshot field is required.",
-            'thumb.url' => "The screenshot field must be filled with a 'http://' or 'https://' URL.",
-            'thumb.max' => "The screenshot URL must be shorter than 500 characters."
-        ]);
+        $request->validate(
+            config('project_validate'),
+            config('project_validate_errors')
+        );
         $data = $request->all();
         $project->update($data);
         return to_route('admin.projects.index', $project);
