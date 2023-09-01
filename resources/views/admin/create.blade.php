@@ -1,6 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+    @if ($errors)
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>
+                    {{ $error }}
+                </li>
+            @endforeach
+        </ul>
+    @endif
     <div class="container">
         <h2 class="fs-4 text-secondary my-4">
             {{ __('Dashboard') }}
