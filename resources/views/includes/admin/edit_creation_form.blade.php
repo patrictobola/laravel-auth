@@ -23,7 +23,7 @@
     <div class="mb-3">
         <label for="title" class="form-label">Title</label>
         <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title"
-            value="">
+            value="{{ old('title', $project->title) }}">
         @error('title')
             <div class="invalid-feedback">
                 Please provide a valid title.
@@ -34,7 +34,7 @@
     <div class="mb-3">
         <label for="description" class="form-label">Description</label>
         <textarea type="text" class="form-control @error('description') is-invalid @enderror" id="description"
-            name="description" rows="4"></textarea>
+            name="description" rows="4">{{ old('description', $project->description) }}</textarea>
         @error('description')
             <div class="invalid-feedback">
                 Please provide a valid description.
@@ -44,7 +44,7 @@
     <div class="mb-3">
         <label for="date" class="form-label">Date</label>
         <input type="date" class="form-control @error('date') is-invalid @enderror" id="date" name="date"
-            value="">
+            value="{{ old('date', $project->date) }}">
         @error('date')
             <div class="invalid-feedback">
                 Please provide a valid date.
@@ -54,7 +54,7 @@
     <div class="mb-3">
         <label for="thumb" class="form-label">Screenshot</label>
         <input type="text" class="form-control @error('thumb') is-invalid @enderror" id="thumb" name="thumb"
-            value="">
+            value="{{ old('thumb', $project->thumb) }}">
         @error('thumb')
             <div class="invalid-feedback">
                 Please provide a valid screenshot URL.
