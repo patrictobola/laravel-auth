@@ -47,7 +47,7 @@ class ProjectController extends Controller
         $new_project->fill($data);
         $new_project->save();
 
-        return to_route('projects.index');
+        return to_route('admin.projects.index');
     }
 
     /**
