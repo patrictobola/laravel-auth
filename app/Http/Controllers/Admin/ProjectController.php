@@ -23,7 +23,8 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.create');
+        $project = new Project();
+        return view('admin.create', compact('project'));
     }
 
     /**
@@ -47,7 +48,7 @@ class ProjectController extends Controller
         $new_project->fill($data);
         $new_project->save();
 
-        return to_route('projects.index');
+        return to_route('admin.projects.index');
     }
 
     /**
