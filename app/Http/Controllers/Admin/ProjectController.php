@@ -31,7 +31,14 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'bail|required|string|max:255',
+            'description' => 'bail|required|string',
+            'date' => 'bail|required|date',
+            'thumb' => 'bail|required|url:http,https|max:500',
+        ]);
         $data = $request->all();
+
         $new_project = new Project();
         $new_project->fill($data);
         $new_project->save();
