@@ -2,6 +2,17 @@
 
 @section('content')
     <div class="container">
+        @if ($errors->any())
+            <div class="alert alert-danger" role="alert">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>
+                            {{ $error }}
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <h2 class="fs-4 text-secondary my-4">
             {{ __('Dashboard') }}
         </h2>
