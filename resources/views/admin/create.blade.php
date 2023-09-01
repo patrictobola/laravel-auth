@@ -5,7 +5,7 @@
         <h2 class="fs-4 text-secondary my-4">
             {{ __('Dashboard') }}
         </h2>
-        <form action="{{ route('projects.store') }}" method="post">
+        <form action="{{ route('admin.projects.store') }}" method="post">
             @csrf
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
@@ -25,7 +25,7 @@
             </div>
 
             <div class="d-flex justify-content-between mt-4">
-                <a href="{{ route('projects.index') }}" class="btn btn-info">Back to main page</a>
+                <a href="{{ route('admin.projects.index') }}" class="btn btn-info">Back to main page</a>
                 <button class="btn btn-success">Submit Changes</button>
         </form>
     </div>

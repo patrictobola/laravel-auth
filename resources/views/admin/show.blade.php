@@ -21,8 +21,8 @@
                     <td>{{ $project->date }}</td>
                     <td>
                         <div class="d-flex justify-content-end">
-                            <a class="btn btn-warning me-2" href="{{ route('projects.edit', $project) }}">Edit</a>
-                            <form action="{{ route('projects.destroy', $project) }}" method="POST">
+                            <a class="btn btn-warning me-2" href="{{ route('admin.projects.edit', $project) }}">Edit</a>
+                            <form action="{{ route('admin.projects.destroy', $project) }}" method="POST">
                                 @csrf
                                 @method('delete')
                                 <button class="btn btn-danger">Delete</button>
