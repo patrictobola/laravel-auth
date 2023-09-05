@@ -14,9 +14,9 @@
         {{ __('Dashboard') }}
     </h2>
     @if (Route::is('admin.projects.create'))
-        <form action="{{ route('admin.projects.store') }}" method="post">
+        <form action="{{ route('admin.projects.store') }}" method="post" enctype="multipart/form-data">
         @else
-            <form action="{{ route('admin.projects.update', $project) }}" method="post">
+            <form action="{{ route('admin.projects.update', $project) }}" method="post" enctype="multipart/form-data">
                 @method('put')
     @endif
     @csrf
