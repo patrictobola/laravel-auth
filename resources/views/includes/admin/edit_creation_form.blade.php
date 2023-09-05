@@ -56,7 +56,7 @@
     </div>
     <div class="mb-3">
         <label for="thumb" class="form-label">Screenshot</label>
-        <input type="text"
+        <input type="file"
             class="form-control @error('thumb') is-invalid @elseif(old('thumb')) is-valid  @enderror"
             id="thumb" name="thumb" value="{{ old('thumb', $project->thumb) }}">
         @error('thumb')
